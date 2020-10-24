@@ -1,2 +1,3 @@
 # java-basic-algorithms
-Implementation of common algorithms with Java 
+Description: Implementation of common algorithms with Java 
+Type: Command Line Application
