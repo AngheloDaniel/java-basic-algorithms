@@ -1,5 +1,6 @@
 package com.anghelodaniel;
 
+import com.anghelodaniel.searching.BinarySearch;
 import com.anghelodaniel.searching.LinearSearch;
 import com.anghelodaniel.sorting.BubbleSort;
 
@@ -26,13 +27,24 @@ public class Main {
         switch (option) {
             case 1: displayBubbleSort(); break;
             case 2: displayLinearSearch(); break;
+            case 3: displayBinarySearch(); break;
         }
+    }
+
+    public void displayBinarySearch() {
+        BinarySearch binarySearch = new BinarySearch();
+        int[] sortedList = utils.createSortedArray(30);
+        binarySearch.displayExample(sortedList, 85);
     }
 
     public void displayBubbleSort() {
         BubbleSort sortMethod = new BubbleSort();
         int[] numbers = utils.createRandomIntArray(10);
-        sortMethod.sort(numbers);
+        System.out.print("\nUnordered list: ");
+        Utils.printArray(numbers);
+        System.out.print("\nSorted list: ");
+        Utils.printArray(sortMethod.sort(numbers));
+
     }
 
     public void displayLinearSearch() {
@@ -42,7 +54,7 @@ public class Main {
 
         System.out.print("\nSearch for number " + number
                 + " in this list : ");
-        utils.printArray(list);
+        Utils.printArray(list);
 
 //        call the search method
         int result = linearSearch.search(list, 50);
@@ -61,6 +73,7 @@ public class Main {
         System.out.println("Menu:");
         System.out.println("1. Sorting");
         System.out.println("2. Searching");
+        System.out.println("3. Binary Search");
         System.out.print("Choose an option: ");
     }
 }

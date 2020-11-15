@@ -1,14 +1,9 @@
 package com.anghelodaniel.sorting;
 
-import com.anghelodaniel.Utils;
-
 public class BubbleSort {
-    Utils utils = new Utils();
+    int iterations = 0;
 
-    public void sort (int[] list) {
-        System.out.println("\nCurrent ordered of the list: ");
-        utils.printArray(list);
-
+    public int[] sort (int[] list) {
         boolean sorted = false;
         int length = list.length;
         int tmp;
@@ -22,11 +17,11 @@ public class BubbleSort {
             }
         }
 
-        System.out.println("\nAfter sorting the list: ");
-        utils.printArray(list);
         if (sorted) {
+            iterations++;
             sort(list);
         }
 
+        return list;
     }
 }
